@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="eee" sizes="180x180" href="favicon/eee.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/eee.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/eee.jpg">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Epic Restaurant</title>
+<style>
+    :root{
+    --yellow:rgb(255, 255, 38);
+    --white:rgba(255, 255, 255, 0.944);
+    --green:lawngreen;
+}
+body,h2{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+.layout{
+    max-width: 2000px;
+    margin:0 auto;
+}
+
+.landing{
+    /* background-image: url('./img/pexels-chan-walrus-941869.jpg'); */
+    background-size:cover;
+background-position: center;
+height: 100vh;
+color:var(--white);
+}
+
+.slideshow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 100%; /* Start off the screen */
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slideFromRight 5s linear infinite; /* Adjust duration and timing function */
+}
+
+@keyframes slideFromRight {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.intro{
+    height: 100%;
+background-color: rgba(0, 0, 0, 0.7);    
+}
+header{
+    display:flex;
+flex-wrap: wrap;
+/* background-color: rgba(0, 0, 0, 0.7); */
+/* margin-bottom: 10px; */
+}
+header a{
+text-decoration: none;
+color:var(--yellow);
+min-width: 120px;
+}
+
+.logo{
+    padding:0.5em;
+    display:flex;
+    flex: 3;
+    align-items: center;
+font-size:1.7em;
+font-weight: bolder;
+}
+.logo img{width:50px;padding:10px;}
+nav{
+display: flex;
+flex:2;
+justify-content: center;
+align-items: center;
+/* flex-wrap: wrap; */
+margin: 10px;
+}
+nav a{
+    flex:1;
+    text-align:center;
+    /* min-width:120px; */
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+nav a:hover{
+    color:black;
+background-color:var(--yellow);
+}
+nav a:active{background-color:rgb(65, 86, 243);color:var(--white)}
+.maintext{
+    display: flex;
+    flex-direction: column;
+    height:50vh;
+    justify-content: center;
+    padding:2em;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+
+}
+.tagline1{
+    /* color: var(--white); */
+    color:red;
+    font-size: 2.2em;
+    font-weight: bolder; 
+    /* background-color: rgb(45, 37, 37); */
+}
+.tagline2{
+    color: var(--yellow);
+font-weight:bolder;
+font-size: 1.3em;
+}
+.callus{
+    color: white;
+    font-weight: bolder;
+}
+.maintext div{
+    margin-top:.75em;
+}
+.maintext button{
+    width:25vw;
+    border-radius: 5px;
+    padding: .5em;
+    margin-top: 1em;
+    background-color: var(--yellow);
+    font-size: 1em;
+    font-weight: bolder;
+    border:1px solid var(--yellow);
+}
+.maintext button:hover{
+    background-color: red;
+    color: var(--yellow);
+    border: 0px;
+}
+.maintext button:active{
+    background-color: black;color: var(--white);
+}
+.menu div{
+ display:grid;
+ grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+ background:linear-gradient(to right,gold,rgb(228, 58, 58));
+}
+#menuhead,#lochead{
+    /* background:linear-gradient(to right,gold,rgb(228, 58, 58)); */
+    background:repeating-linear-gradient(to right,rgb(239, 49, 49),gold);
+    color:rgb(84, 11, 231);
+    font-size: 2.5em;
+display: flex;
+justify-content: center;
+padding-top: 20px;
+
+}
+.menu th{
+    font-size: 1.5em;
+}
+table{width: 100%;padding: 1em;}
+
+.menu tr{
+    display:flex;
+    justify-content: center;
+margin-top:.5em ;
+padding: 5px;
+font-weight: bold;
+}
+.menu tr:nth-child(even){
+    background-color: rgb(236, 216, 216);
+}
+.menu td:nth-child(1){
+    flex:1;
+    justify-self: left;
+}
+.menu td:nth-child(2){
+    justify-self: right;
+    font-size: 1.1em;
+}
+
+.maincourse{
+    grid-row:span 2;
+}
+.locations{
+display: flex;
+    background:linear-gradient(to right,gold,rgb(228, 58, 58));
+flex-wrap: wrap;
+
+}
+.locations h2{margin-bottom: .8em;color: rgb(236, 216, 216);}
+.locations div{flex:1;margin:10px;padding:1em;text-align: center;background-color: rgba(0,0,0,0.2);border-radius: 10px;}
+.locations address{font-weight: bold;}
+footer{
+    background-color: black;
+color:var(--white);
+padding: 30px;
+text-align: center;
+}
+i{
+    margin:5px;
+}
+.socialmedia a i{
+width:50px;
+height: 30px;
+}
+
+
+@media(min-width:1700px){ 
+.layout{
+    max-width: 2565px;
+    margin:0 auto;
+}
+
+.logo{
+font-size:4.7em;
+}
+.logo img{width:100px;padding:10px;}
+
+nav a{
+    font-size: 3.2em;
+}
+.tagline1{
+    font-size: 6.2em;
+}
+.tagline2{
+font-size: 3.3em;
+}
+.callus{
+    font-size: 3.2em;
+}
+.maintext div{
+    margin-top:1em;
+}
+.maintext button{
+    font-size: 2.5em;
+    }
+#menuhead,#lochead{
+        font-size: 5.5em;
+}
+.menu th{
+    font-size: 2.5em;
+}
+.menu tr{font-size: 2em;}
+.locations h2{font-size:2.3em;}
+.locations div{font-size:2em;}
+.locations address{font-size:1.2em;font-weight: bolder;}
+footer{font-size: 2em;}
+i{ margin:10px;}
+.socialmedia a i{width:120px;height: 50px;}
+
+}
+</style>
+</head>
+<body>
+    <div class="layout">
+<div class="landing">
+    <div class="slideshow-container">
+        <div class="slideshow-image"></div> 
+    </div>
+    <div class="intro">
+    <header>
+        <div class="logo">
+            <img  src="favicon/eee.jpg">
+            <a  href="">Epic Restaurant</a>
+        </div>
+        <nav>
+            <a href="#menuhead"><i class="fa-solid fa-bars"></i>Menu</a>
+            <a href="#lochead"><i class="fa-solid fa-location-dot"></i>Locations</a>
+        </nav>    
+    </header>
+
+<div class="maintext">
+    <!-- <div class="tagline1">Finest Treat for your Taste buds and Hunger</div> -->
+    <div class="tagline1">Explore Good Times and Great Tastes at EPIC</div>
+    <div class="tagline2">Taste, Smile, Repeat: EPIC - Your Happy Place for Great Food</div>
+    <div class="callus">
+        <i class="fa-solid fa-phone"></i>Call Us @ +91-9876543210
+    </div>
+    <button><i class="fa-solid fa-cart-shopping"></i>Order Online</button>
+</div>
+</div>
+</div>    
+
+<h2 id="menuhead"><i class="fa-solid fa-cart-shopping"></i>Food Menu</h2>
+<div class="menu">
+    <div class="starters">
+        <table>
+                <th colspan="2"><i class="fa-solid fa-bowl-food"></i>Starters</th>
+                <tr>
+                    <td>Mirchi Bajji</td>
+                    <td>&#8377 100</td>
+                </tr>
+                <tr>
+                    <td>Veg Pakoda</td>
+                    <td>&#8377 130</td>
+                </tr>
+                <tr>
+                    <td>Paneer Tikka</td>
+                    <td>&#8377 150</td>
+                </tr>
+                <tr>
+                    <td>Gobi Manjurian</td>
+                    <td>&#8377 100</td>
+                </tr>
+                <tr>
+                    <td>Chilli Gobi</td>
+                    <td>&#8377 100</td>
+                </tr>
+                <tr>
+                    <td>Gobi 65</td>
+                    <td>&#8377 100</td>
+                </tr>
+                <tr>
+                    <td>Baby Corn Manjurian</td>
+                    <td>&#8377 100</td>
+                </tr>
+                <tr>
+                    <td>Chilli Paneer</td>
+                    <td>&#8377 100</td>
+                </tr>
+        </table>
+
+<table class="maincourse">
+    <th colspan="2"><i class="fa-solid fa-utensils"></i>Main Course</th>
+    <tr>
+        <td>Veg Fried Rice</td>
+        <td>&#8377 150</td>
+    </tr>
+    <tr>
+        <td>Schezwan Fried Rice</td>
+        <td>&#8377 180</td>
+    </tr><tr>
+        <td>Veg Biriyani</td>
+        <td>&#8377 130</td>
+    </tr><tr>
+        <td>Mushroom Biriyani</td>
+        <td>&#8377 140</td>
+    </tr><tr>
+        <td>Panner Biriyani</td>
+        <td>&#8377 120</td>
+    </tr><tr>
+        <td>Veg Noodles</td>
+        <td>&#8377 180</td>
+    </tr><tr>
+        <td>Schezwan Noodles</td>
+        <td>&#8377 190</td>
+    </tr><tr>
+        <td>Veg Pulaav</td>
+        <td>&#8377 150</td>
+    </tr><tr>
+        <td>Kashmiri Pulaav</td>
+        <td>&#8377 180</td>
+    </tr><tr>
+        <td>Sambar Rice</td>
+        <td>&#8377 100</td>
+    </tr><tr>
+        <td>Curd Rice</td>
+        <td>&#8377 100</td>
+    </tr>
+</table>
+    <table class="chats">
+            <th colspan="2"><i class="fa-solid fa-burger"></i>Chats</th>
+            <tr>
+                <td>Samosa</td>
+                <td>&#8377 50</td>
+            </tr>
+            <tr>
+                <td>Paani Poori</td>
+                <td>&#8377 100</td>
+            </tr>
+                <tr>
+                    <td>Masala Poori</td>
+                    <td>&#8377 100</td>
+                </tr>
+                <tr>
+                    <td> Bheal Poori</td>
+                    <td>&#8377 120</td>
+                </tr>
+                <tr>
+                    <td>Vada Pav</td>
+                    <td>&#8377 70</td>
+                </tr>
+                <tr>
+                    <td>Paav Baajji</td>
+                    <td>&#8377 100</td>
+                </tr>
+                <tr>
+                    <td>Raj Kachori</td>
+                    <td>&#8377 100</td>
+                </tr>
+            
+        </table>
+    </div>
+</div>
+
+<h2 id="lochead"><i class="fa-solid fa-location-dot"></i>Locations</h2>
+<div class="locations">
+    <div class="Jubilee Hills">
+        <h2>Jubilee Hills</h2>
+        <address>
+            Building,1st Floor,SL Jubilee 1215/A,<br>Rd Number 36,Jubilee Hills,<br>Hyderabad,Telangana- 500 033
+        </address>
+    </div>
+    <div class="Banglore">
+        <h2>Bangalore</h2>
+        <address>
+            4,Kengal Hanumanthaiah Rd,<br>Bheemanna Garden,Shanti Nagar,<br>Banglore,Karnataka- 560 027
+        </address>
+    </div>
+    <div class="chennai">
+        <h2>Chennai</h2>
+        <address>
+            12,15th cross road,<br>Ambapuram,Velacheri,<br>Chennai- 600 008
+        </address>
+    </div>
+</div>
+<footer>
+    <div class="socialmedia">
+    <a href="https://github.com/singhdevika09" target="_blank"><i class="fa-brands fa-github fa-fade fa-2xl"></i></a>
+    <a href="https://www.linkedin.com/in/singhdevika23" target="_blank"><i class="fa-brands fa-linkedin fa-fade fa-2xl" style="color: #3d7ef0;"></i>
+    </a>
+    <a href="mailto:218r5a0422@gmail.com" target="_blank"> <i class="fa-solid fa-envelope fa-fade fa-2xl"></i></a>
+           </div>
+<div id="copyright">&#169 CopyRight Epic</div>
+</footer>
+</div>
+<script >
+    
+const images = ['img/img1.jpg', 'img/img2.jpg', 'img/img3.jpg','img/img4.jpg','img/img5.jpg'];
+
+const slideshowImage = document.querySelector('.slideshow-image');
+
+let currentIndex = 0;
+
+function changeSlide() {
+    slideshowImage.style.backgroundImage = `url(${images[currentIndex]})`;
+    currentIndex = (currentIndex + 1) % images.length;
+}
+
+function startSlideAnimation() {
+    changeSlide();
+    setInterval(changeSlide, 4000); // Change slide every 5 seconds
+}
+
+startSlideAnimation();
+
+</script>
+</body>
+
+</html>
